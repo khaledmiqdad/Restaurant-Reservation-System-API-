@@ -1,0 +1,2212 @@
+{
+	"info": {
+		"_postman_id": "1b4eeb66-c816-4ca2-959d-9c40f6102cb3",
+		"name": "RestaurantReservationSystem.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44910168"
+	},
+	"item": [
+		{
+			"name": "RestaurantsController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Restaurants",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImU4NDc5MmRjLThlZmYtNDg4Ni1hMjdkLWY0N2Q1MDdhNzdkYiIsImV4cCI6MTc0ODMzMTg0MywiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.w0HhK6nPHz5QeEiifW3XLoAWkCiaLrI7914z8rASpI0"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Reservations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/1/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Reservations (unexisting Restaurant)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/50/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/2/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Employees (unexisting Restaurant)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/50/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Tables",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/2/tables"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Tables (unexisting Restaurant)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/50/tables"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Menu Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/1/menu-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Restaurant Menu Items (unexisting Restaurant)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/restaurants/50/menu-items"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Restaurant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Ocean View\",\r\n            \"address\": \"Beach Road\",\r\n            \"phoneNumber\": \"0987654321\",\r\n            \"openingHours\": \"15:00 - 22:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants"
+							},
+							"response": []
+						},
+						{
+							"name": "POST Create Restaurant (invalid data)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Ocean View\",\r\n            \"address\": \"Beach Road\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Restaurant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Updated Ocean View\",\r\n            \"address\": \"Updated Beach Road\",\r\n            \"phoneNumber\": \"Updated 0987654321\",\r\n            \"openingHours\": \"Updated 10:00 - 22:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Restaurant (unexisting Restaurant)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Updated Ocean View\",\r\n            \"address\": \"Updated Beach Road\",\r\n            \"phoneNumber\": \"Updated 0987654321\",\r\n            \"openingHours\": \"Updated 10:00 - 22:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/50"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Restaurant (invalid data)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"name\": \"Updated Ocean View\",\r\n            \"address\": \"Updated Beach Road\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Restaurant",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Restaurant (null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/10"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Restaurant (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/na\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Restaurant (unexisting Restaurant)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/restaurants/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Restaurant",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/restaurants/27"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Restaurant (unexisting Restaurant)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/restaurants/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "EmployeesController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImNlNDY5ZDU1LTliNjUtNGFjNC1iN2E0LWFmZjk5ZTRmYmQ1ZCIsImV4cCI6MTc0ODE0ODkzNSwiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.yttPlAVrc5U5Sasz1jfzyw8iY96Euc4X8c9mA7xyfds"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/2/orders"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee Orders (unexisting Employee)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/50/orders"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/2/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee  Restaurant (unexisting Employee)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/50/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Managers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://localhost:7152/api/employees?managersOnly=true",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7152",
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "managersOnly",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee Average Order Amount",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImZiODZmZTZiLWM3YmQtNDdkNC05ZmI5LTVlM2NlN2QzMzJiMCIsImV4cCI6MTc0ODE0ODQ5MywiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.sFoteYU_eJtcuQDkyxyfolXSdqpyv-v_75hmoLhLgDs"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/1/order/average-amount"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Employee Average Order Amount (unexisting Employee)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImZiODZmZTZiLWM3YmQtNDdkNC05ZmI5LTVlM2NlN2QzMzJiMCIsImV4cCI6MTc0ODE0ODQ5MywiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.sFoteYU_eJtcuQDkyxyfolXSdqpyv-v_75hmoLhLgDs"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/employees/50/order/average-amount"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 3,\r\n            \"firstName\": \"omer\",\r\n            \"lastName\": \"Miqdad\",\r\n            \"position\": \"Manager\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "POST Create Employee (invalid data)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 2,\r\n            \"firstName\": \"Sara\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 5,\r\n            \"firstName\": \"Mahmoud\",\r\n            \"lastName\": \"Miqdad\",\r\n            \"position\": \"Manager\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/1008"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Employee (unexisting Employee)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 3,\r\n            \"firstName\": \"up Mahmoud\",\r\n            \"lastName\": \"up Meqdad\",\r\n            \"position\": \"up Manager\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/50"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Employee (invalid data)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 3,\r\n            \"firstName\": \"up Mahmoud\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Employee",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/firstName\",\r\n      \"value\": \"Yousef\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Employee (null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/10"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Employee (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/firs\",\r\n      \"value\": \"Basel\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Employee (unexisting Employee)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Employee",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/employees/3"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Employee (unexisting Employee)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/employees/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TablesController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Tables",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Table",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Table Reservations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables/2/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Table Reservations(unexisting Table)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables/50/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Table Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables/2/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Table Restaurant (unexisting Table)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/tables/50/restaurant"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Table",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"restaurantId\": 3,\r\n        \"capacity\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Table",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"restaurantId\": 4,\r\n        \"capacity\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables/1008"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Table (unexisting Table)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"restaurantId\": 2,\r\n        \"capacity\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Table",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/capacity\",\r\n      \"value\": \"30\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Table(null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables/10"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Table (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/cap\",\r\n      \"value\": \"50\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/employees/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Table(unexisting Table)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/tables/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Table",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/tables/3"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Table (unexisting Table)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/tables/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OrdersController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Orders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order Employee",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImNlNDY5ZDU1LTliNjUtNGFjNC1iN2E0LWFmZjk5ZTRmYmQ1ZCIsImV4cCI6MTc0ODE0ODkzNSwiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.yttPlAVrc5U5Sasz1jfzyw8iY96Euc4X8c9mA7xyfds"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/9/employee"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order Employee (unexisting Orders)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/50/employee"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order Reservation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/2/reservation"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order Reservation (unexisting Order)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/50/reservation"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order MenuItems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/2/items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order MenuItems (unexisting Order)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/orders/50/items"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"reservationId\": 2,\r\n            \"employeeId\": 2,\r\n            \"orderDate\": \"2025-04-20T17:47:38.2243642\",\r\n            \"totalAmount\": 150.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reservationId\": 2,\r\n        \"employeeId\": 3,\r\n        \"orderDate\": \"2025-05-20T11:29:28.2815948\",\r\n        \"totalAmount\": 200.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Order (unexisting Order)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"reservationId\": 5,\r\n        \"employeeId\": 5,\r\n        \"orderDate\": \"2025-04-20T11:29:28.2815948\",\r\n        \"totalAmount\": 65.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Order",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/totalAmount\",\r\n      \"value\": \"500\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/Orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Order(null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders/10"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Order (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/total\",\r\n      \"value\": \"500\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Order (unexisting Order)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/orders/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/orders/5"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Order (unexisting Order)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/orders/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ReservationsController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Reservations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Orders",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6IjFiMDM5ZTc2LTc0NTktNGI1My1iYjY0LTBjM2EyNGUzZjVhMSIsImV4cCI6MTc0ODE1MDEyNywiaXNzIjoiSnd0QXV0aERlbW9Jc3N1ZXIiLCJhdWQiOiJKd3RBdXRoRGVtb0F1ZGllbmNlIn0.tZ6qN3x9q3F0GaPox0SucpEFRxDmt2sRHvx-2KYUohU"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/1/orders"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Orders (unexisting Reservations)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/50/orders"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/2/customer"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Order Reservation (unexisting Order)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/50/customer"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/2/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Restaurant (unexisting Reservation)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/50/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Table",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/2/table"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Table (unexisting Reservation)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/50/table"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservations By Customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/customer/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservations By Customer (unexisting Customer)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/customer/50"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Menu Items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/2/menu-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Reservation Menu Items (unexisting Reservation)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/reservations/50/menu-items"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Reservation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"customerId\": 2,\r\n            \"restaurantId\": 2,\r\n            \"tableId\": 2,\r\n            \"reservationDate\": \"2025-04-22T16:50:51.8888661\",\r\n            \"partySize\": 150\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Reservation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"customerId\": 1,\r\n            \"restaurantId\": 1,\r\n            \"tableId\": 1,\r\n            \"reservationDate\": \"2025-04-22T16:50:51.8888661\",\r\n            \"partySize\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Reservation (unexisting Reservation)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"customerId\": 1,\r\n            \"restaurantId\": 1,\r\n            \"tableId\": 1,\r\n            \"reservationDate\": \"2025-04-22T16:50:51.8888661\",\r\n            \"partySize\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Reservation",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/partySize\",\r\n      \"value\": \"50\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Reservation (null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/10"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Reservation(invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/par\",\r\n      \"value\": \"500\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/1"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Reservation (unexisting Order)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/pad\",\r\n      \"value\": \"300\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/reservations/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Reservation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/reservations/5"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Reservations (unexisting Reservations )",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/reservations/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "MenuItemController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET MenuItems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET MenuItem",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items/2040"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Menu OrderItems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items/2040/order-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Menu OrderItems (unexisting MenuItems)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items/50/order-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET MenuItem Restaurant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items/2040/restaurant"
+							},
+							"response": []
+						},
+						{
+							"name": "GET MenuItem Restaurant (unexisting MenuItem)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/menu-items/50/restaurant"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create MenuItem",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 4,\r\n            \"name\": \"Golden Chicken\",\r\n            \"description\": \"description for Golden chicken.\",\r\n            \"price\": 25.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update MenuItem",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 1,\r\n            \"name\": \"Grilled Chicken (Updated)\",\r\n            \"description\": \"Updated description for grilled chicken.\",\r\n            \"price\": 120.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/2044"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update MenuItem (unexisting MenuItem)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"restaurantId\": 1,\r\n            \"name\": \"Grilled Chicken (Updated)\",\r\n            \"description\": \"Updated description for grilled chicken.\",\r\n            \"price\": 14.99\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH MenuItem",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Menu Item name\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/2040"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH MenuItem(null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/2040"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH MenuItem(invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/pri\",\r\n      \"value\": \"500\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/2040"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH MenuItem (unexisting MenuItem )",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/price\",\r\n      \"value\": \"300\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/menu-items/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE MenuItem",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/menu-items/2038"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE MenuItem (unexisting MenuItem)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/menu-items/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CustomersController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET Customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/customers"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/customers/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Customer Reservations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/customers/2/reservations"
+							},
+							"response": []
+						},
+						{
+							"name": "GET Customer Reservations (unexisting Customer)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/customers/50/reservations"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create Customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Mahmoud\",\r\n            \"lastName\": \"Hamdan\",\r\n            \"email\": \"Test@gmail.com\",\r\n            \"phoneNumber\": \"0599999999\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers"
+							},
+							"response": []
+						},
+						{
+							"name": "POST Create Customer (invalid data)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Updated FirstName\",\r\n            \"email\": \"Updated Test@gmail.com\",\r\n            \"phoneNumber\": \"0599999999\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update Customer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Shahed\",\r\n            \"lastName\": \"Jamal\",\r\n            \"email\": \"Test@gmail.com\",\r\n            \"phoneNumber\": \"0511111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/2"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Customer (unexisting Customer)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Shahed\",\r\n            \"lastName\": \"Jamal\",\r\n            \"email\": \"Test@gmail.com\",\r\n            \"phoneNumber\": \"0511111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/50"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update Customer(invalid data)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"email\": \"Test@gmail.com\",\r\n            \"phoneNumber\": \"0511111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH Customer",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/firstName\",\r\n      \"value\": \"Basel\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Customer(null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Customer (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/firs\",\r\n      \"value\": \"Basel\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH Customer(unexisting Customer)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/name\",\r\n      \"value\": \"Updated - Central Park\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/customers/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE Customer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/customers/2"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Customer (unexisting Customer)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/employees/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OrderItemsController",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET OrderItems",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items"
+							},
+							"response": []
+						},
+						{
+							"name": "GET OrderItem",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items/2"
+							},
+							"response": []
+						},
+						{
+							"name": "GET OrderItem Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items/2/order"
+							},
+							"response": []
+						},
+						{
+							"name": "GET OrderItem Order(unexisting OrderItem)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items/50/order"
+							},
+							"response": []
+						},
+						{
+							"name": "GET OrderItem MenuItem",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items/2/menu-item"
+							},
+							"response": []
+						},
+						{
+							"name": "GET OrderItem MenuItem (unexisting OrderItem)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://localhost:7152/api/order-items/50/menu-item"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST Create OrderItem",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"orderId\": 2,\r\n            \"itemId\": 2038,\r\n            \"quantity\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT Update OrderItem",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"orderId\": 5,\r\n        \"itemId\": 2040,\r\n        \"quantity\": 40\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/2"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Update OrderItem (unexisting OrderItem)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"firstName\": \"Shahed\",\r\n            \"lastName\": \"Jamal\",\r\n            \"email\": \"Test@gmail.com\",\r\n            \"phoneNumber\": \"0511111111\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PATCH",
+					"item": [
+						{
+							"name": "PATCH OrderItem",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/quantity\",\r\n      \"value\": \"60\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH OrderItem (null patch doc)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH OrderItem (invalid patch model)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/qun\",\r\n      \"value\": \"50\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/5"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH OrderItem (unexisting OrderItem)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n      \"op\": \"replace\",\r\n      \"path\": \"/qun\",\r\n      \"value\": \"70\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://localhost:7152/api/order-items/50"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE OrderItem",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/order-items/9"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE OrderItem (unexisting OrderItem)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "https://localhost:7152/api/order-items/50"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "POST Create JWT Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://localhost:7152/api/auth/login"
+			},
+			"response": []
+		}
+	]
+}
